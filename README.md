@@ -240,7 +240,7 @@ or from a human who might reply.
 
 | Method | Purpose |
 |---|---|
-| `sendManager(string\|array $recipientEmail, string $subject, string $htmlTemplate, ?array $context, ?string $senderEmail, ?string $replyToEmail, array $attachments = []): void` | Builds and sends a support email. Attachments matching an image extension (`jpg`, `jpeg`, `png`, `gif`, `svg`) are embedded inline; others are attached as files. |
+| `send(string\|array $recipientEmail, string $subject, string $htmlTemplate, ?array $context, ?string $senderEmail, ?string $replyToEmail, array $attachments = []): void` | Builds and sends a support email. Attachments matching an image extension (`jpg`, `jpeg`, `png`, `gif`, `svg`) are embedded inline; others are attached as files. |
 
 `$attachments` format: `['path/to/file' => 'Display_Name.ext']`.
 
@@ -257,7 +257,7 @@ final class ManuscriptSubmissionHandler
 
     public function notifyEditorialTeam(ManuscriptSubmission $submission): void
     {
-        $this->supportMailer->sendManager(
+        $this->supportMailer->send(
             'editorial-team@yourdomain.com',
             'New manuscript submission',
             'emails/notification_submission.html.twig',
@@ -327,7 +327,7 @@ public function notifyToDirection(
 ): void;
 ```
 
-Delegates to `SupportMailerInterface::sendManager()`, using the `support`
+Delegates to `SupportMailerInterface::send()`, using the `support`
 sender configuration. Use it to alert an internal team or the direction
 about something a client did on the platform (a form was filled, a file was
 uploaded). Passing `$clientEmail` sets it as `Reply-To`, so staff can reply
@@ -376,7 +376,7 @@ $this->mailerManager->sendMailByDirection(
 
 ### `notifyToDirection()` vs `sendMailByDirection()` — which one?
 
-Both end up calling the same underlying `sendManager()` method with the
+Both end up calling the same underlying `send()` method with the
 `support` sender configuration; the difference is purely about **direction
 and intent**, not implementation:
 
@@ -427,6 +427,20 @@ The current bundle makes no decision on your behalf: these methods are
 present but are not invoked automatically anywhere (neither in `sendNow()`
 nor in `sendAsync()`).
 
-## License
+## 📄 License
 
-MIT — see [LICENSE](LICENSE).
+MIT © [AGBOKOUDJO Franck](https://github.com/Agbokoudjo) — INTERNATIONALES WEB APPS & SERVICES
+
+---
+
+## 👤 Author
+
+**AGBOKOUDJO Franck**
+
+- 📧 Email: [internationaleswebservices@gmail.com](mailto:internationaleswebservices@gmail.com)
+- 📞 Phone: +229 01 67 25 18 86
+- 💼 LinkedIn: [INTERNATIONALES WEB APPS & SERVICES](https://www.linkedin.com/in/internationales-web-apps-services-120520193/)
+- 🐙 GitHub: [@Agbokoudjo](https://github.com/Agbokoudjo)
+- 🏢 Company: INTERNATIONALES WEB APPS & SERVICES
+
+---
