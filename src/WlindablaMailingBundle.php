@@ -44,7 +44,6 @@ final class WlindablaMailingBundle extends AbstractBundle
             ->children()
                 ->arrayNode('from_addresses')
                     ->info('Sender configuration per type (system, support, ...).')
-                    ->useAttributeAsKey('name')
                     ->arrayPrototype()
                         ->children()
                             ->scalarNode('address')
