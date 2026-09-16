@@ -4,7 +4,7 @@
     "type": "symfony-bundle",
     "license": "MIT",
     "keywords": ["symfony", "bundle", "mailer", "email", "mailing", "twig", "dkim", "notifications"],
-    "homepage": "https://github.com/Agbokoudjo/wlindabla-mailing-bundle",
+    "homepage": "https://github.com/Agbokoudjo/mailing-bundle",
     "authors": [
         {
             "name": "AGBOKOUDJO Franck",
